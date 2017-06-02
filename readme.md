@@ -4,4 +4,5 @@ Las siguientes herramientas son multiplataforma y gratuitas
 - Node.js
   - Express.js
   - socket.io
+- Jquery
 - Draw.io
