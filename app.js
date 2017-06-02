@@ -14,7 +14,11 @@ server.listen(app.get('port'), function () {
   console.log('servidor en puerto 3000');
 });
 
-var socket = io.listen(server);
-socket.on('connection', function(socket) {
+var sockets = io.listen(server);
+sockets.on('connection', function(socket) {
   console.log('un nuevo usuario conectado');
+
+  socket.on('mensaje-del-cliente', function(data) {
+    sockets.emit('mensaje-del-servidor', data);
+  });
 });
